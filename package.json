@@ -16,5 +16,6 @@
     "vite": "^4.5.2"
   },
   "keywords": [],
-  "description": ""
+  "description": "",
+  "main": "index.jsx"
 }
