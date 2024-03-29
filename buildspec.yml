@@ -14,12 +14,8 @@ phases:
     commands:
       - echo Build started on 'date'
       - npm run build
-  post_build:
-    commands:
-      - aws s3 cp --recursive --acl public-read ./build s3://basic-website-project-bucket/
-      - aws s3 cp --acl public-read --cache-control="max-age=0, no-cache, no-store, must-revalidate" ./build/index.html s3://basic-website-project-bucket/
-      - aws cloudfront create-invalidation --distribution-id E290Q4SJZ55VPD --paths /index.html
 artifacts:
   files:
-    - "build/*"
-    - "build/**/*"
+    - src/
+    - package.json
+    - appspec.yml
